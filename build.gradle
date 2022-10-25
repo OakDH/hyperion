@@ -1,0 +1,32 @@
+plugins {
+  id 'application'
+  id 'org.openjfx.javafxplugin' version '0.0.10'
+  id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+archivesBaseName = project.archives_base_name
+version = project.version
+group = project.maven_group
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = "19"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+application {
+    mainClass = "io.github.oakdh.hyperion.App"
+    mainModule = "hellofx"
+}
+
+shadowJar {
+    archiveBaseName.set('shadow')
+    archiveClassifier.set(project.archives_base_name)
+
+    manifest {
+        mainClassName = "io.github.oakdh.hyperion.Main"
+    }
+}
