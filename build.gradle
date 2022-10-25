@@ -19,7 +19,7 @@ javafx {
 
 application {
     mainClass = "io.github.oakdh.hyperion.App"
-    mainModule = "hellofx"
+    mainModule = "io.github.oakdh.hyperion"
 }
 
 shadowJar {
