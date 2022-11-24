@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.oakdh.hyperion.scene.controller.LoginSceneController">
    <children>
@@ -26,18 +27,30 @@
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>
+                     <font>
+                        <Font name="Codec Cold Trial Regular" size="13.0" />
+                     </font>
                   </Label>
                   <TextField fx:id="usernameTextField" prefWidth="200.0" />
                   <Label maxWidth="1.7976931348623157E308" text="Password">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
+                     <font>
+                        <Font name="Codec Cold Trial Regular" size="13.0" />
+                     </font>
                   </Label>
                   <PasswordField fx:id="passwordField" prefWidth="200.0" />
                   <HBox alignment="TOP_RIGHT" prefHeight="0.0" prefWidth="320.0" spacing="10.0">
                      <children>
-                        <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onExitPressed" text="Exit" />
-                        <Button fx:id="loginButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onLoginPressed" text="Login" />
+                        <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onExitPressed" text="Exit">
+                           <font>
+                              <Font name="Codec Cold Trial Regular" size="13.0" />
+                           </font></Button>
+                        <Button fx:id="loginButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onLoginPressed" text="Login">
+                           <font>
+                              <Font name="Codec Cold Trial Regular" size="13.0" />
+                           </font></Button>
                      </children>
                      <VBox.margin>
                         <Insets top="10.0" />
