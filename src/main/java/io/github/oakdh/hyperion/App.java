@@ -5,7 +5,7 @@ import javafx.stage.Stage;
 
 public class App extends Application
 {
-    private static Stage STAGE;
+    public static Stage STAGE;
 
     @Override
     public void start(Stage stage)
@@ -16,7 +16,7 @@ public class App extends Application
         
         SceneRegistry.init();
 
-        stage.setScene(SceneRegistry.LOGIN_SCENE);
+        stage.setScene(SceneRegistry.WELCOME_SCENE);
         stage.show();
     }
 

@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 
 public class SceneRegistry
 {
+    public static Scene DATA_SCENE = register(new BaseScene("data_scene"));
     public static Scene LOGIN_SCENE = register(new BaseScene("login_scene"));
 
     public static Scene register(Scene toRegister)

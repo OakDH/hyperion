@@ -48,7 +48,7 @@
         <Menu mnemonicParsing="false" text="Menu">
           <items>
             <MenuItem mnemonicParsing="false" text="Gebruiker review" />
-                  <MenuItem mnemonicParsing="false" text="Data" />
+                  <MenuItem fx:id="onDataPressed" mnemonicParsing="false" onAction="#onDataPressed" text="Data" />
             <MenuItem mnemonicParsing="false" text="Maintanance" />
                   <MenuItem mnemonicParsing="false" text="Data-table" />
                   <MenuItem mnemonicParsing="false" text="Data-graph" />
