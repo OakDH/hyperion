@@ -12,5 +12,7 @@ public class SceneRegistry
         return toRegister;
     }
 
+    public static Scene WELCOME_SCENE = register(new BaseScene("welcome_scene"));
+
     public static void init() {}
 }
