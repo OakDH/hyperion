@@ -4,7 +4,7 @@ import io.github.oakdh.hyperion.App;
 import io.github.oakdh.hyperion.SceneRegistry;
 import javafx.fxml.FXML;
 
-public class WelcomeSceneController {
+public class MaintenanceSceneController {
     @FXML
     public void onExitPressed()
     {
@@ -16,7 +16,7 @@ public class WelcomeSceneController {
     {
         App.STAGE.setScene(SceneRegistry.DATA_SCENE);
         App.STAGE.show();
-    } 
+    }
     @FXML
     public void onUserReviewPressed()
     {
@@ -24,10 +24,11 @@ public class WelcomeSceneController {
         App.STAGE.show();
     } 
     @FXML
-    public void onMaintenancePressed()
+    public void onHomeScreenPressed()
     {
-        App.STAGE.setScene(SceneRegistry.MAINTENANCE_SCENE);
+        App.STAGE.setScene(SceneRegistry.WELCOME_SCENE);
         App.STAGE.show();
     } 
+    
 
 }

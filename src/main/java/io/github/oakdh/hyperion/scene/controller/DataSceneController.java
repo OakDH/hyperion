@@ -4,17 +4,17 @@ import io.github.oakdh.hyperion.App;
 import io.github.oakdh.hyperion.SceneRegistry;
 import javafx.fxml.FXML;
 
-public class WelcomeSceneController {
+public class DataSceneController {
     @FXML
     public void onExitPressed()
     {
         System.exit(0);
     }
     //menubar functions
-   @FXML
-    public void onDataPressed()
+    @FXML
+    public void onHomeScreenPressed()
     {
-        App.STAGE.setScene(SceneRegistry.DATA_SCENE);
+        App.STAGE.setScene(SceneRegistry.WELCOME_SCENE);
         App.STAGE.show();
     } 
     @FXML

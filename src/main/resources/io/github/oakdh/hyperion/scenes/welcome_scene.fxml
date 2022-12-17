@@ -32,7 +32,6 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -47,11 +46,12 @@
       <menus>
         <Menu mnemonicParsing="false" text="Menu">
           <items>
-            <MenuItem mnemonicParsing="false" text="Gebruiker review" />
+            <MenuItem fx:id="onUserReviewPressed" mnemonicParsing="false" onAction="#onUserReviewPressed" text="User review" />
                   <MenuItem fx:id="onDataPressed" mnemonicParsing="false" onAction="#onDataPressed" text="Data" />
-            <MenuItem mnemonicParsing="false" text="Maintanance" />
+            <MenuItem fx:id="onMaintenancePressed" mnemonicParsing="false" onAction="#onMaintenancePressed" text="Maintanance" />
                   <MenuItem mnemonicParsing="false" text="Data-table" />
                   <MenuItem mnemonicParsing="false" text="Data-graph" />
+                  <MenuItem fx:id="onExitPressed1" mnemonicParsing="false" onAction="#onExitPressed" text="Logout" />
           </items>
         </Menu>
       </menus>
@@ -63,7 +63,6 @@
             <Font size="18.0" />
           </font>
         </Label>
-            <Button fx:id="onExitPressed" layoutX="293.0" layoutY="312.0" mnemonicParsing="false" onAction="#onExitPressed" text="logout" />
       </children>
     </AnchorPane>
   </children>
