@@ -16,11 +16,29 @@ public class MaintenanceSceneController {
     {
         App.STAGE.setScene(SceneRegistry.DATA_SCENE);
         App.STAGE.show();
-    }
+    } 
     @FXML
     public void onUserReviewPressed()
     {
         App.STAGE.setScene(SceneRegistry.USER_REVIEW_SCENE);
+        App.STAGE.show();
+    } 
+    @FXML
+    public void onMaintenancePressed()
+    {
+        App.STAGE.setScene(SceneRegistry.MAINTENANCE_SCENE);
+        App.STAGE.show();
+    } 
+    @FXML
+    public void onDataTablePressed()
+    {
+        App.STAGE.setScene(SceneRegistry.DATA_TABLE_SCENE);
+        App.STAGE.show();
+    } 
+    @FXML
+    public void onDataGraphPressed()
+    {
+        App.STAGE.setScene(SceneRegistry.DATA_GRAPH_SCENE);
         App.STAGE.show();
     } 
     @FXML

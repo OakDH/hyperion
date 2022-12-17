@@ -46,12 +46,13 @@
       <menus>
         <Menu mnemonicParsing="false" text="Menu">
           <items>
-            <MenuItem fx:id="onUserReviewPressed" mnemonicParsing="false" onAction="#onUserReviewPressed" text="User review" />
-                  <MenuItem fx:id="onDataPressed" mnemonicParsing="false" onAction="#onDataPressed" text="Data" />
-            <MenuItem fx:id="onMaintenancePressed" mnemonicParsing="false" onAction="#onMaintenancePressed" text="Maintanance" />
-                  <MenuItem mnemonicParsing="false" text="Data-table" />
-                  <MenuItem mnemonicParsing="false" text="Data-graph" />
-                  <MenuItem fx:id="onExitPressed1" mnemonicParsing="false" onAction="#onExitPressed" text="Logout" />
+                  <MenuItem fx:id="onHomeScreenPressed" mnemonicParsing="false" onAction="#onHomeScreenPressed" text="Home screen" />
+                  <MenuItem fx:id="onDataPressed1" mnemonicParsing="false" onAction="#onDataPressed" text="Data" />
+                  <MenuItem fx:id="onUserReviewPressed1" mnemonicParsing="false" onAction="#onUserReviewPressed" text="User review" />
+                  <MenuItem fx:id="onDataTablePressed" mnemonicParsing="false" onAction="#onDataTablePressed" text="Data-table" />
+                  <MenuItem fx:id="onDataGraphPressed" mnemonicParsing="false" onAction="#onDataGraphPressed" text="Data-graph" />
+                  <MenuItem fx:id="onMaintenancePressed1" mnemonicParsing="false" onAction="#onMaintenancePressed" text="Maintenance" />
+                  <MenuItem fx:id="onExitPressed" mnemonicParsing="false" onAction="#onExitPressed" text="Logout" />
           </items>
         </Menu>
       </menus>

@@ -29,5 +29,23 @@ public class WelcomeSceneController {
         App.STAGE.setScene(SceneRegistry.MAINTENANCE_SCENE);
         App.STAGE.show();
     } 
+    @FXML
+    public void onDataTablePressed()
+    {
+        App.STAGE.setScene(SceneRegistry.DATA_TABLE_SCENE);
+        App.STAGE.show();
+    } 
+    @FXML
+    public void onDataGraphPressed()
+    {
+        App.STAGE.setScene(SceneRegistry.DATA_GRAPH_SCENE);
+        App.STAGE.show();
+    } 
+    @FXML
+    public void onHomeScreenPressed()
+    {
+        App.STAGE.setScene(SceneRegistry.WELCOME_SCENE);
+        App.STAGE.show();
+    } 
 
 }

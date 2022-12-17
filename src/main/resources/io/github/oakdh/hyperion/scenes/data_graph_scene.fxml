@@ -39,26 +39,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.oakdh.hyperion.scene.controller.MaintenanceSceneController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.oakdh.hyperion.scene.controller.DataGraphSceneController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
         <Menu mnemonicParsing="false" text="Menu">
           <items>
-                  <MenuItem fx:id="onHomeScreenPressed1" mnemonicParsing="false" onAction="#onHomeScreenPressed" text="Home screen" />
-                  <MenuItem fx:id="onDataPressed1" mnemonicParsing="false" onAction="#onDataPressed" text="Data" />
-                  <MenuItem fx:id="onUserReviewPressed1" mnemonicParsing="false" onAction="#onUserReviewPressed" text="User review" />
+                  <MenuItem fx:id="onHomeScreenPressed" mnemonicParsing="false" onAction="#onHomeScreenPressed" text="Home screen" />
+                  <MenuItem fx:id="onDataPressed" mnemonicParsing="false" onAction="#onDataPressed" text="Data" />
+            <MenuItem fx:id="onUserReviewPressed" mnemonicParsing="false" onAction="#onUserReviewPressed" text="User review" />
                   <MenuItem fx:id="onDataTablePressed" mnemonicParsing="false" onAction="#onDataTablePressed" text="Data-table" />
                   <MenuItem fx:id="onDataGraphPressed" mnemonicParsing="false" onAction="#onDataGraphPressed" text="Data-graph" />
                   <MenuItem fx:id="onMaintenancePressed" mnemonicParsing="false" onAction="#onMaintenancePressed" text="Maintenance" />
-                  <MenuItem fx:id="onExitPressed1" mnemonicParsing="false" onAction="#onExitPressed" text="Logout" />
+                  <MenuItem fx:id="onExitPressed" mnemonicParsing="false" onAction="#onExitPressed" text="Logout" />
           </items>
         </Menu>
       </menus>
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <Label layoutX="285.0" layoutY="14.0" text="Maintenance" />
+            <Label layoutX="289.0" layoutY="14.0" text="Data Graph" />
          </children></AnchorPane>
   </children>
 </VBox>

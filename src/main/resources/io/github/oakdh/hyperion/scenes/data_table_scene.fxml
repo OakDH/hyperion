@@ -39,7 +39,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.oakdh.hyperion.scene.controller.MaintenanceSceneController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.oakdh.hyperion.scene.controller.DataTableSceneController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -49,8 +49,8 @@
                   <MenuItem fx:id="onDataPressed1" mnemonicParsing="false" onAction="#onDataPressed" text="Data" />
                   <MenuItem fx:id="onUserReviewPressed1" mnemonicParsing="false" onAction="#onUserReviewPressed" text="User review" />
                   <MenuItem fx:id="onDataTablePressed" mnemonicParsing="false" onAction="#onDataTablePressed" text="Data-table" />
-                  <MenuItem fx:id="onDataGraphPressed" mnemonicParsing="false" onAction="#onDataGraphPressed" text="Data-graph" />
-                  <MenuItem fx:id="onMaintenancePressed" mnemonicParsing="false" onAction="#onMaintenancePressed" text="Maintenance" />
+                  <MenuItem fx:id="onDataGraphPressed1" mnemonicParsing="false" onAction="#onDataGraphPressed" text="Data-graph" />
+                  <MenuItem fx:id="onMaintenancePressed1" mnemonicParsing="false" onAction="#onMaintenancePressed" text="Maintenance" />
                   <MenuItem fx:id="onExitPressed1" mnemonicParsing="false" onAction="#onExitPressed" text="Logout" />
           </items>
         </Menu>
@@ -58,7 +58,8 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <Label layoutX="285.0" layoutY="14.0" text="Maintenance" />
+            <Label layoutX="291.0" layoutY="14.0" text="Data-table" />
          </children></AnchorPane>
+      <Label text="Label" />
   </children>
 </VBox>

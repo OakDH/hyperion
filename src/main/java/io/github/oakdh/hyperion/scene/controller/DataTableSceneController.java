@@ -4,7 +4,7 @@ import io.github.oakdh.hyperion.App;
 import io.github.oakdh.hyperion.SceneRegistry;
 import javafx.fxml.FXML;
 
-public class DataSceneController {
+public class DataTableSceneController {
     @FXML
     public void onExitPressed()
     {
@@ -47,5 +47,4 @@ public class DataSceneController {
         App.STAGE.setScene(SceneRegistry.WELCOME_SCENE);
         App.STAGE.show();
     } 
-
 }
