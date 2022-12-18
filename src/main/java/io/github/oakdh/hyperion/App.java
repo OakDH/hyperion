@@ -5,7 +5,7 @@ import javafx.stage.Stage;
 
 public class App extends Application
 {
-    private static Stage STAGE;
+    public static Stage STAGE;
 
     @Override
     public void start(Stage stage)
