@@ -16,7 +16,7 @@ public class App extends Application
         
         SceneRegistry.init();
 
-        stage.setScene(SceneRegistry.WELCOME_SCENE);
+        stage.setScene(SceneRegistry.LOGIN_SCENE);
         stage.show();
     }
 

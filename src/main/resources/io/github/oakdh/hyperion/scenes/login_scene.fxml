@@ -21,6 +21,7 @@
                   <Image url="@../images/icon_simple.png" />
                </image>
             </ImageView>
+            <Label fx:id="wrongLogin" prefHeight="17.0" prefWidth="182.0" textFill="#c93e3e" />
             <VBox prefHeight="200.0" prefWidth="250.0" stylesheets="@stylesheet.css">
                <children>
                   <Label maxWidth="1.7976931348623157E308" stylesheets="@stylesheet.css" text="Username">

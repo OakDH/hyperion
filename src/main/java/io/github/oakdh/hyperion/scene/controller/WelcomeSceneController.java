@@ -2,7 +2,13 @@ package io.github.oakdh.hyperion.scene.controller;
 
 import io.github.oakdh.hyperion.App;
 import io.github.oakdh.hyperion.SceneRegistry;
+import javafx.animation.RotateTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.shape.Circle;
+import javafx.util.Duration;
+
+
 
 public class WelcomeSceneController {
     @FXML
