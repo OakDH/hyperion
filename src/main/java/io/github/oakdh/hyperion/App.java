@@ -22,7 +22,11 @@ public class App extends Application
 
     public static void main(String[] args)
     {
+        HTTPHandler.init();
+
         launch(args);
+
+        HTTPHandler.cleanup();
     }
 
 }

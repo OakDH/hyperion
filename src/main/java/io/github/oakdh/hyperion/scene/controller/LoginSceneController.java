@@ -1,6 +1,9 @@
 package io.github.oakdh.hyperion.scene.controller;
 
+import org.json.JSONObject;
+
 import io.github.oakdh.hyperion.App;
+import io.github.oakdh.hyperion.HTTPHandler;
 import io.github.oakdh.hyperion.SceneRegistry;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -34,16 +37,19 @@ public class LoginSceneController
     @FXML
     public void onLoginPressed()
     {
-        System.out.println("Placeholder.");
-        checkLogin();
-    }
+        JSONObject client_login = HTTPHandler.sendMessage(String.format("client_login/%s/%s", usernameTextField.getText(), passwordField.getText()));
 
-    private void checkLogin(){
-        if(usernameTextField.getText().toString().equals("admin") && passwordField.getText().toString().equals("12345")){
+        if (client_login.getInt("status") != 0) 
+        {
+            wrongLogin.setText("Wrong username!");
+            return;
+        }
+
+        if(client_login.getBoolean("login_success")){
             App.STAGE.setScene(SceneRegistry.WELCOME_SCENE);
             App.STAGE.show();
         } else{
-            wrongLogin.setText("Wrong username or password!");
+            wrongLogin.setText("Wrong password!");
         }
     }
 }
