@@ -36,7 +36,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -61,15 +60,7 @@
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
             <Label layoutX="291.0" layoutY="14.0" text="Data-table" />
-            <TableView fx:id="table" layoutX="50.0" layoutY="54.0" prefHeight="248.0" prefWidth="541.0">
-              <columns>
-                <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
-                <TableColumn fx:id="soil" prefWidth="75.0" text="SOIL %" />
-                  <TableColumn fx:id="moist" prefWidth="120.0" text="HUMIDITY %" />
-                  <TableColumn fx:id="temp" prefWidth="119.0" text="TEMP CELSIUS" />
-                  <TableColumn fx:id="time" prefWidth="151.0" text="DATE &amp; TIME" />
-              </columns>
-            </TableView>
+            <TableView fx:id="table" layoutX="50.0" layoutY="54.0" prefHeight="248.0" prefWidth="541.0" />
          </children></AnchorPane>
       <Label text="Label" />
   </children>
