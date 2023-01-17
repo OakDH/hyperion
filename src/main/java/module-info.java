@@ -5,6 +5,6 @@ module io.github.oakdh.hyperion {
 
     requires transitive org.json;
 
-    opens io.github.oakdh.hyperion.scene.controller to javafx.fxml;
+    opens io.github.oakdh.hyperion.scene.controller to javafx.fxml, javafx.base;
     exports io.github.oakdh.hyperion;
 }

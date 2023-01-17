@@ -3,7 +3,11 @@ package io.github.oakdh.hyperion.scene.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import io.github.oakdh.hyperion.App;
+import io.github.oakdh.hyperion.HTTPHandler;
 import io.github.oakdh.hyperion.SceneRegistry;
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -68,36 +72,63 @@ public class DataTableSceneController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
-        TableColumn<Measurement, String> col1 = new TableColumn<Measurement, String>("ID");
+        TableColumn<Measurement, Integer> col1 = new TableColumn<>("ID");
         col1.setMinWidth(100);
-        col1.setCellValueFactory(new PropertyValueFactory<Measurement, String>("id"));
+        col1.setCellValueFactory(new PropertyValueFactory<>("id"));
 
-        TableColumn<Measurement, String> col2 = new TableColumn<Measurement, String>("Temperature");
+        TableColumn<Measurement, Float> col2 = new TableColumn<Measurement, Float>("Temperature");
         col2.setMinWidth(100);
-        col2.setCellValueFactory(new PropertyValueFactory<Measurement, String>("temperature"));
+        col2.setCellValueFactory(new PropertyValueFactory<Measurement, Float>("temperature"));
 
-        TableColumn<Measurement, String> col3 = new TableColumn<Measurement, String>("Humidity");
+        TableColumn<Measurement, Float> col3 = new TableColumn<Measurement, Float>("Humidity");
         col3.setMinWidth(100);
-        col3.setCellValueFactory(new PropertyValueFactory<Measurement, String>("humidity"));
+        col3.setCellValueFactory(new PropertyValueFactory<Measurement, Float>("humidity"));
 
-        TableColumn<Measurement, String> col4 = new TableColumn<Measurement, String>("Soil Moisture");
+        TableColumn<Measurement, Float> col4 = new TableColumn<Measurement, Float>("Soil Moisture");
         col4.setMinWidth(100);
-        col4.setCellValueFactory(new PropertyValueFactory<Measurement, String>("soilMoisture"));
+        col4.setCellValueFactory(new PropertyValueFactory<Measurement, Float>("soilMoisture"));
 
-        TableColumn<Measurement, String> col5 = new TableColumn<Measurement, String>("Time");
+        TableColumn<Measurement, Long> col5 = new TableColumn<Measurement, Long>("Time");
         col5.setMinWidth(100);
-        col5.setCellValueFactory(new PropertyValueFactory<Measurement, String>("time"));
+        col5.setCellValueFactory(new PropertyValueFactory<Measurement, Long>("time"));
 
-
-        // data = FXCollections.observableArrayList(new Measurement(1, 2, 3, 4, 5));
-
-        // table.setItems(data);
-
-        table.getItems().add(new Measurement(1, 2, 3, 4, 5));
-        table.getColumns().addAll(col1, col2, col3, col4, col5);
-
+        TableColumn<Measurement, Float> col6 = new TableColumn<Measurement, Float>("Risk Factor");
+        col6.setMinWidth(100);
+        col6.setCellValueFactory(new PropertyValueFactory<Measurement, Float>("riskFactor"));
         
-        
+        try
+        {
+            JSONObject ob = HTTPHandler.sendMessage("get_measurements");
+
+            JSONArray arr = ob.getJSONArray("measurements");
+
+            for (int i = 0; i < arr.length(); i++)
+            {
+                JSONObject element = arr.getJSONObject(i);
+
+                float t = element.getFloat("temperature");
+                float h = element.getFloat("humidity");
+                float s = element.getFloat("soil_moisture");
+
+                float risk = 1 - (-t + h + s * 100) / 100;
+
+                table.getItems().add(new Measurement(
+                    element.getInt("id"), 
+                    t, 
+                    h, 
+                    s,
+                    element.getLong("time"),
+                    risk));
+            }
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        // table.getItems().add(new Measurement(1, 2, 3, 4, 5));
+        table.getColumns().addAll(col1, col2, col3, col4, col5, col6);
     } 
 
     public static class Measurement
@@ -107,14 +138,16 @@ public class DataTableSceneController implements Initializable {
         private final SimpleFloatProperty humidity;
         private final SimpleFloatProperty soilMoisture;
         private final SimpleLongProperty time;
+        private final SimpleFloatProperty riskFactor;
 
-        public Measurement(int id, float temperature, float humidity, float soil_moisture, long time)
+        public Measurement(int id, float temperature, float humidity, float soil_moisture, long time, float riskFactor)
         {
             this.id = new SimpleIntegerProperty(id);
             this.temperature = new SimpleFloatProperty(temperature);
             this.humidity = new SimpleFloatProperty(humidity);
             this.soilMoisture = new SimpleFloatProperty(soil_moisture);
             this.time = new SimpleLongProperty(time);
+            this.riskFactor = new SimpleFloatProperty(riskFactor);
         }
 
         public int getId()
@@ -142,5 +175,39 @@ public class DataTableSceneController implements Initializable {
             return time.get();
         }
 
+        public float getRiskFactor()
+        {
+            return riskFactor.get();
+        }
+
+        public void setId(int id)
+        {
+            this.id.set(id);
+        }
+
+        public void setTemperature (float temperature)
+        {
+            this.temperature.set(temperature);
+        }
+
+        public void setHumidity (float humidity)
+        {
+            this.humidity.set(humidity);
+        }
+        
+        public void setSoilMoisture (float soilMoisture)
+        {
+            this.soilMoisture.set(soilMoisture);
+        }
+
+        public void setTime(long time)
+        {
+            this.time.set(time);
+        }
+
+        public void setRiskFactor(float riskFactor)
+        {
+            this.riskFactor.set(riskFactor);
+        }
     }
 }
