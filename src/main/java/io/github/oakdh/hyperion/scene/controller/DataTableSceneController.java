@@ -32,7 +32,7 @@ public class DataTableSceneController implements Initializable {
         System.exit(0);
     }
     //menubar functions
-   @FXML
+    @FXML
     public void onDataPressed()
     {
         App.STAGE.setScene(SceneRegistry.DATA_SCENE);
@@ -129,11 +129,6 @@ public class DataTableSceneController implements Initializable {
         // table.getItems().add(new Measurement(1, 2, 3, 4, 5));
         table.getColumns().addAll(col1, col2, col3, col4, col5, col6);
     } 
-
-    public static void populateTable()
-    {
-
-    }
 
     public static class Measurement
     {
