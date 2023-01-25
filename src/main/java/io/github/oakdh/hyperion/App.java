@@ -3,6 +3,8 @@ package io.github.oakdh.hyperion;
 import org.json.JSONObject;
 
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
 import javafx.stage.Stage;
 
 public class App extends Application
@@ -37,11 +39,25 @@ public class App extends Application
 
                 if (ob.getInt("status") != 0) continue;
 
-                SceneRegistry.DATA_TABLE_SCENE_CONTROLLER.table.getItems().clear();
+                Platform.runLater(() -> {
+                    
+                    SceneRegistry.DATA_TABLE_SCENE_CONTROLLER.table.getItems().clear();
 
-                SceneRegistry.DATA_TABLE_SCENE_CONTROLLER.populateTable(ob);
+                    SceneRegistry.DATA_TABLE_SCENE_CONTROLLER.populateTable(ob);
 
-                SceneRegistry.DATA_TABLE_SCENE_CONTROLLER.table.sort();
+                    SceneRegistry.DATA_TABLE_SCENE_CONTROLLER.table.sort();
+
+                    System.out.println("Hello");
+
+                    // Data scene
+
+                    SceneRegistry.DATA_SCENE_CONTROLLER.riskChart.setData(FXCollections.observableArrayList());
+                    SceneRegistry.DATA_SCENE_CONTROLLER.tempChart.setData(FXCollections.observableArrayList());
+                    SceneRegistry.DATA_SCENE_CONTROLLER.humChart.setData(FXCollections.observableArrayList());
+                    SceneRegistry.DATA_SCENE_CONTROLLER.soilChart.setData(FXCollections.observableArrayList());
+
+                    SceneRegistry.DATA_SCENE_CONTROLLER.populateChart(ob);   
+                });
             }
         });
         
