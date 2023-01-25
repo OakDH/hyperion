@@ -95,10 +95,18 @@ public class DataTableSceneController implements Initializable {
         col6.setMinWidth(100);
         col6.setCellValueFactory(new PropertyValueFactory<Measurement, Float>("riskFactor"));
         
+        JSONObject ob = HTTPHandler.sendMessage("get_measurements");
+
+        populateTable(ob);
+
+        // table.getItems().add(new Measurement(1, 2, 3, 4, 5));
+        table.getColumns().addAll(col1, col2, col3, col4, col5, col6);
+    } 
+
+    public void populateTable(JSONObject ob)
+    {
         try
         {
-            JSONObject ob = HTTPHandler.sendMessage("get_measurements");
-
             JSONArray arr = ob.getJSONArray("measurements");
 
             for (int i = 0; i < arr.length(); i++)
@@ -125,10 +133,7 @@ public class DataTableSceneController implements Initializable {
         {
             e.printStackTrace();
         }
-
-        // table.getItems().add(new Measurement(1, 2, 3, 4, 5));
-        table.getColumns().addAll(col1, col2, col3, col4, col5, col6);
-    } 
+    }
 
     public static class Measurement
     {

@@ -8,10 +8,10 @@ import javafx.scene.Scene;
 public class SceneRegistry
 {
     public static Scene DATA_SCENE;
+    public static Scene DATA_TABLE_SCENE;
     public static Scene LOGIN_SCENE = register("login_scene");
     public static Scene USER_REVIEW_SCENE = register("user_review_scene");
     public static Scene MAINTENANCE_SCENE = register("maintenance_scene");
-    public static Scene DATA_TABLE_SCENE;
     public static Scene DATA_GRAPH_SCENE = register("data_graph_scene");
     public static Scene WELCOME_SCENE = register("welcome_scene");
 
