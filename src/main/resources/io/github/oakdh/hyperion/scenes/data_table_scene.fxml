@@ -59,8 +59,7 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <Label layoutX="291.0" layoutY="14.0" text="Data-table" />
-            <TableView fx:id="table" layoutX="50.0" layoutY="54.0" prefHeight="248.0" prefWidth="541.0" />
+            <TableView fx:id="table" layoutX="50.0" layoutY="54.0" prefHeight="248.0" prefWidth="541.0" AnchorPane.bottomAnchor="56.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="54.0" />
          </children></AnchorPane>
       <Label text="Label" />
   </children>

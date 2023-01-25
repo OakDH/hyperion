@@ -12,7 +12,6 @@ import io.github.oakdh.hyperion.SceneRegistry;
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleLongProperty;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -130,6 +129,11 @@ public class DataTableSceneController implements Initializable {
         // table.getItems().add(new Measurement(1, 2, 3, 4, 5));
         table.getColumns().addAll(col1, col2, col3, col4, col5, col6);
     } 
+
+    public static void populateTable()
+    {
+
+    }
 
     public static class Measurement
     {

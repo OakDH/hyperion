@@ -11,7 +11,7 @@ public class DataSceneController {
         System.exit(0);
     }
     //menubar functions
-   @FXML
+    @FXML
     public void onDataPressed()
     {
         App.STAGE.setScene(SceneRegistry.DATA_SCENE);
